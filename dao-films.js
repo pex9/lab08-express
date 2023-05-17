@@ -93,12 +93,16 @@ exports.createFilm = (film) => {
 // This function updates an existing film given its id and the new properties.
 exports.updateFilm = (id, film) => {
     return new Promise((resolve, reject) => {
-      const sql = 'UPDATE films SET title = ?, favorite = ?, watchDate = ?, rating = ?, user = ? WHERE id = ?';
-      db.run(sql, [film.title, film.favorite, film.watchDate, film.rating, id, film.user], function (err) {
+      const sql = 'UPDATE films SET title = ?, favorite = ?, watchDate = ?, rating = ? WHERE id = ?';
+      db.run(sql, [film.title, film.favorite, film.watchDate, film.rating, id], function (err) {
         if (err) {
           reject(err);
         }
-        resolve(exports.getFilm(id)); 
+        if (this.changes !== 1) {
+          resolve({ error: 'Film not found.' });
+        } else {
+          resolve(exports.getFilm(id)); 
+        }
       });
     });
 };
