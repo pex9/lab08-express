@@ -124,7 +124,10 @@ app.put('/api/films/:id',
 
     try {
       const result = await filmDao.updateFilm(film.id, film);
-      res.json(result); 
+      if (result.error)
+        res.status(404).json(result);
+      else
+        res.json(result); 
     } catch (err) {
       res.status(503).json({ error: `Database error during the update of film ${req.params.id}: ${err}` });
     }

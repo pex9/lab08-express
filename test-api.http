@@ -133,3 +133,17 @@ content-type: application/json
     "rating": 50
 }
 ###
+
+## Updates film with and id that does not exists
+PUT http://localhost:3001/api/films/999 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 999,
+    "title": "The Hangover",
+    "favorite": 0,
+    "watchDate": "",
+    "rating": 0,
+    "user": 1
+}
+###
