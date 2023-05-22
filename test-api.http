@@ -32,7 +32,7 @@ GET http://localhost:3001/api/films?filter=filter-lastmonth HTTP/1.1
 
 
 
-## Updates film. 
+## Updates the first film.
 PUT http://localhost:3001/api/films/1 HTTP/1.1
 content-type: application/json
 
@@ -47,7 +47,7 @@ content-type: application/json
 ###
 
 
-## Updates film favorite property. 
+## Updates film favorite property.
 PUT http://localhost:3001/api/films/1/favorite HTTP/1.1
 content-type: application/json
 
@@ -81,15 +81,15 @@ GET http://localhost:3001/api/films HTTP/1.1
 
 # Wrong Requests
 
-## Trying to retrieve a film with an ID that does not exist
+## Trying to retrieve a film with an ID that does not exist.
 GET http://localhost:3001/api/films/1000 HTTP/1.1
 ###
 
-## Trying to retrieve a film with a wrong ID
+## Trying to retrieve a film with a wrong ID.
 GET http://localhost:3001/api/films/ThisIsAStringId HTTP/1.1
 ###
 
-## Trying to create a wrong film
+## Trying to create a wrong film.
 POST http://localhost:3001/api/films HTTP/1.1
 content-type: application/json
 
@@ -101,7 +101,7 @@ content-type: application/json
 }
 ###
 
-## Trying to update a film. 
+## Trying to update a film with wrong values.
 PUT http://localhost:3001/api/films/1 HTTP/1.1
 content-type: application/json
 
@@ -114,7 +114,7 @@ content-type: application/json
 }
 ###
 
-## Trying to updates film favorite property
+## Trying to updates film favorite property with a wrong value.
 PUT http://localhost:3001/api/films/1/favorite HTTP/1.1
 content-type: application/json
 
@@ -124,7 +124,7 @@ content-type: application/json
 }
 ###
 
-## Updates film rating property.
+## Trying to update film rating property with a wrong value.
 PUT http://localhost:3001/api/films/1/rating HTTP/1.1
 content-type: application/json
 
