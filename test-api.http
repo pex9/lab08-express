@@ -9,10 +9,6 @@ GET http://localhost:3001/api/films/{{$randomInt 1 6}} HTTP/1.1
 ###
 
 
-## Retrieving all the films with a specified filter (in this example "unseen").
-GET http://localhost:3001/api/films?filter=filter-unseen HTTP/1.1
-###
-
 ## Create new film (without id)
 POST http://localhost:3001/api/films HTTP/1.1
 content-type: application/json
@@ -38,11 +34,11 @@ content-type: application/json
 
 {
     "id": 1,
-    "title": "The Hangover",
-    "favorite": 0,
+    "title": "Noemi la piu bella ragazza",
+    "favorite": 5,
     "watchDate": "",
     "rating": 0,
-    "user": 1
+    "user": 5
 }
 ###
 
@@ -53,7 +49,7 @@ content-type: application/json
 
 {
     "id": 1,
-    "favorite": 1
+    "favorite": 5
 }
 ###
 
